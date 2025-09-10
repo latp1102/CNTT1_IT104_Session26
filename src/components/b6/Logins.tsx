@@ -16,8 +16,6 @@ export default function Logins() {
     role: "",
   });
 
-  const [error, setError] = useState("");
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({
       ...form,
@@ -34,7 +32,7 @@ export default function Logins() {
     ) {
       navigate("/account");
     } else {
-      setError("Thông tin đăng nhập sai");
+      alert("Thông tin đăng nhập sai");
     }
   };
 
@@ -69,7 +67,6 @@ export default function Logins() {
         </div>
         <button type="submit">Đăng nhập</button>
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }
